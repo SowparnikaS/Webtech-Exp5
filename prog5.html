@@ -1,0 +1,54 @@
+
+<html>
+<body>
+
+<h3>Heads or Tails?</h3>
+
+<img src="coin.jpeg" id="coin" width="100">
+
+<br>
+
+<button id="flip">Flip!</button>
+
+<p>
+    Heads: <span id="num_heads">0</span><br>
+    Tails: <span id="num_tails">0</span>
+</p>
+
+<script>
+
+var heads = 0;
+var tails = 0;
+
+document.getElementById("flip").addEventListener("click", flip);
+
+function flip() {
+
+    var n = Math.floor(Math.random() * 2);
+
+    if (n == 0) {
+
+        document.getElementById("coin").src = "coin.jpeg";
+
+        heads++;
+
+        document.getElementById("num_heads").innerHTML = heads;
+
+    }
+
+    else {
+
+        document.getElementById("coin").src = "coin.jpeg";
+
+        tails++;
+
+        document.getElementById("num_tails").innerHTML = tails;
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

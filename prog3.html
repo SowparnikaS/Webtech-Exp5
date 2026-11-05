@@ -1,0 +1,47 @@
+
+<html>
+<body>
+
+<h3>Fruit Farm</h3>
+
+Rows: <input id="rows">
+Columns: <input id="columns">
+
+<button onclick="grow()">Plant Garden</button>
+
+<div id="garden"></div>
+
+<script>
+
+function grow() {
+
+    var r = parseInt(document.getElementById("rows").value);
+    var c = parseInt(document.getElementById("columns").value);
+
+    var fruits = ["Apple.jpg", "Orange.jpg"];
+    var garden = document.getElementById("garden");
+
+    garden.innerHTML = "";
+
+    for (var i = 0; i < r; i++) {
+
+        for (var j = 0; j < c; j++) {
+
+            var n = Math.floor(Math.random() * 2);
+
+            garden.innerHTML +=
+                "<img src='" + fruits[n] +
+                "' width='100' height='100'>";
+
+        }
+
+        garden.innerHTML += "<br>";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

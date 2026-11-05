@@ -1,0 +1,49 @@
+
+<html>
+<body>
+
+<h3>Currency Converter</h3>
+
+<input id="data">
+
+<select id="from">
+    <option>Indian Rupee</option>
+    <option>US Dollar</option>
+</select>
+
+<select id="to">
+    <option>US Dollar</option>
+    <option>Indian Rupee</option>
+</select>
+
+<button onclick="convert()">Calculate</button>
+
+<p id="answer"></p>
+
+<script>
+
+function convert() {
+
+    var x = parseFloat(document.getElementById("data").value);
+    var from = document.getElementById("from").value;
+    var to = document.getElementById("to").value;
+    var result;
+
+    if (from == "Indian Rupee" && to == "US Dollar")
+        result = x * 0.015;
+
+    else if (from == "US Dollar" && to == "Indian Rupee")
+        result = x * 67.12;
+
+    else
+        result = x;
+
+    document.getElementById("answer").innerHTML =
+        "Result: " + result.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

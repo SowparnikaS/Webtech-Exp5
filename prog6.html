@@ -1,0 +1,54 @@
+
+<html>
+<body>
+
+<h3>Birthday Cake Order</h3>
+
+1/2kg Cakes: <input id="small"><br>
+1kg Cakes: <input id="medium"><br>
+2kg Cakes: <input id="large"><br>
+
+Tip:
+
+<input type="radio" name="tip" value="10">10%
+
+<input type="radio" name="tip" value="15" checked>15%
+
+<input type="radio" name="tip" value="20">20%
+
+<br><br>
+
+<button id="submit">Calculate Order</button>
+
+<p>Cost: Rs. <span id="price"></span></p>
+
+<script>
+
+document.getElementById("submit")
+    .addEventListener("click", calculate);
+
+function calculate() {
+
+    var s = parseInt(document.getElementById("small").value);
+    var m = parseInt(document.getElementById("medium").value);
+    var l = parseInt(document.getElementById("large").value);
+
+    var total = s * 100 + m * 200 + l * 400;
+
+    total = total + total * 0.09;
+
+    var tip = parseInt(
+        document.querySelector('input[name="tip"]:checked').value
+    );
+
+    total = total + total * tip / 100;
+
+    document.getElementById("price").innerHTML =
+        total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
